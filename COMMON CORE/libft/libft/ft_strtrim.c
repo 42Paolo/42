@@ -6,11 +6,9 @@
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 09:52:11 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/29 12:52:28 by pabrogi          ###   ########.fr       */
+/*   Updated: 2025/10/29 19:02:30 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../libft.h"
 
 #include "libft.h"
 
