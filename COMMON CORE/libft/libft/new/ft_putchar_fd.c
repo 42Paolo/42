@@ -6,8 +6,14 @@
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 09:52:11 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/29 09:52:35 by pabrogi          ###   ########.fr       */
+/*   Updated: 2025/10/29 18:50:06 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+
+void ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
