@@ -6,8 +6,16 @@
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 19:08:53 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/29 19:09:13 by pabrogi          ###   ########.fr       */
+/*   Updated: 2025/10/29 19:11:32 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+
+
+
+	
+}

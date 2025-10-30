@@ -6,8 +6,15 @@
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 19:08:53 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/29 19:09:12 by pabrogi          ###   ########.fr       */
+/*   Updated: 2025/10/29 19:11:03 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+
+
+	
+}

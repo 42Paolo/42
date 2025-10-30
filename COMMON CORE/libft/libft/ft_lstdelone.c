@@ -6,8 +6,15 @@
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 19:08:53 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/29 19:09:10 by pabrogi          ###   ########.fr       */
+/*   Updated: 2025/10/29 19:10:37 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+
+
+	
+}

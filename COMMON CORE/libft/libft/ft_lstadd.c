@@ -6,8 +6,15 @@
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 19:08:53 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/29 19:09:02 by pabrogi          ###   ########.fr       */
+/*   Updated: 2025/10/30 11:38:32 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_lstadd(t_list **alst, t_list *new_node)
+{
+	
+
+	
+}
