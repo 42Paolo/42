@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 17:34:19 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/28 10:59:19 by pabrogi          ###   ########.fr       */
+/*   Created: 2025/11/09 12:29:33 by pabrogi           #+#    #+#             */
+/*   Updated: 2025/11/09 12:31:52 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
-char *ft_strcpy(char *dst, const char * src)
+int	ft_isprint(int c)
 {
-	char *tmp = dst;
-	while((char)*src)
-	{
-		*dst = *src;
-		dst++;
-		src++;
-	}
-	*dst = '\0';
-	return tmp;
+	if(c >= 32 && c <= 126)
+		return (1);
+	return (0);	
 }

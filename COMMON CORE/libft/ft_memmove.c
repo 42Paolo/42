@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 17:34:19 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/28 13:04:18 by pabrogi          ###   ########.fr       */
+/*   Created: 2025/11/09 12:45:49 by pabrogi           #+#    #+#             */
+/*   Updated: 2025/11/09 12:57:13 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*source;
-	char	*dest;
+	size_t			i;
+	unsigned char	*ptr_dst;
+	unsigned char	*ptr_src;
 
-	source = (char *)src;
-	dest = (char *)dst;
-	while (n > 0)
+	if (!dst && !src)
+		return (0);
+	ptr_dst = (unsigned char *)dst;
+	ptr_src = (unsigned char *)src;
+	if (ptr_src < ptr_dst)
+		while (len--)
+			ptr_dst[len] = ptr_src[len];
+	else
 	{
-		*dest = *source;
-		n--;
-		if ((unsigned char)*source == (unsigned char)c)
-			return (dest++);
-		dest++;
-		source++;
+		i = 0;
+		while (i < len)
+		{
+			ptr_dst[i] = ptr_src[i];
+			i++;
+		}
 	}
-	return (NULL);
+	return (dst);
 }
-

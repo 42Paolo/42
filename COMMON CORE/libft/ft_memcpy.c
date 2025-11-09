@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 17:34:19 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/28 13:43:24 by pabrogi          ###   ########.fr       */
+/*   Created: 2025/11/09 12:42:19 by pabrogi           #+#    #+#             */
+/*   Updated: 2025/11/09 12:45:47 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+void *ft_memset(void *b, int c, size_t len)
 {
-	char	*tmp;
+	size_t i;
+	unsigned char *ptr;
 
-	tmp = s1;
-	while (*s1)
-		s1++;
-	while (*s2 && n > 0)
+	i = 0;
+	ptr = (unsigned char *)b;	
+	while(i < len)
 	{
-		*s1 = *s2;
-		s1++;
-		s2++;
-		n--;
+		ptr[i] = (unsigned char)c;
+		i++;
 	}
-	*s1 = '\0';
-	return (tmp);
+	return (b);
 }

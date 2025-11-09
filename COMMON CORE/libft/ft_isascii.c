@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 09:52:11 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/10/29 11:24:14 by pabrogi          ###   ########.fr       */
+/*   Created: 2025/11/09 12:20:15 by pabrogi           #+#    #+#             */
+/*   Updated: 2025/11/09 12:31:55 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft.h"
 
-int ft_strequ(char const *s1, char const *s2)
+int	ft_isascii(int c)
 {
-	ft_strcmp(s1, s2)
-
-	
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
