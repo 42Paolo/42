@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 14:19:38 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/11/09 20:01:10 by pabrogi          ###   ########.fr       */
+/*   Created: 2025/11/09 20:01:19 by pabrogi           #+#    #+#             */
+/*   Updated: 2025/11/09 20:15:39 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if(c >= 'a' && c<= 'z')
-		c -= 32;
-	return (c);
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

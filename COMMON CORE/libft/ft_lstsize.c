@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 14:19:38 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/11/09 20:01:10 by pabrogi          ###   ########.fr       */
+/*   Created: 2025/11/09 20:09:43 by pabrogi           #+#    #+#             */
+/*   Updated: 2025/11/09 20:15:46 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int ft_lstsize(t_list *lst)
 {
-	if(c >= 'a' && c<= 'z')
-		c -= 32;
-	return (c);
+	int count;
+
+	count = 0;
+	while(lst)
+	{
+		lst = lst->next;
+		count++;
+	}
+	return (count);
 }
