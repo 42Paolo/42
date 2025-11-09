@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 14:54:14 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/11/09 15:06:00 by pabrogi          ###   ########.fr       */
+/*   Created: 2025/11/09 14:59:38 by pabrogi           #+#    #+#             */
+/*   Updated: 2025/11/09 15:04:56 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strdup(const char *s1)
 {
-	long	ris;
-	int		sig;
+	char	*ptr_s1_cpy;
+	char	*tmp;
 
-	ris = 0;
-	sig = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
+	ptr_s1_cpy = (char *)malloc(ft_strlen(s1) + 1);
+	if (!ptr_s1_cpy)
+		return (NULL);
+	tmp = ptr_s1_cpy;
+	while (*s1)
 	{
-		if (*str == '-')
-			sig = -1;
-		str++;
+		*tmp = *s1;
+		tmp++;
+		s1++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		ris = ris * 10 + (*str - '0');
-		str++;
-	}
-	return ((int)(ris * sig));
+	*tmp = '\0';
+	return (ptr_s1_cpy);
 }
