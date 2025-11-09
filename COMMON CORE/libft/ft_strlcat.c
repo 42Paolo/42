@@ -6,21 +6,11 @@
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 13:12:07 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/11/09 14:17:21 by pabrogi          ###   ########.fr       */
+/*   Updated: 2025/11/09 19:54:25 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-	
-	i = 0;
-	while(s[i])
-		i++;
-	return (i);	
-}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

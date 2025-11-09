@@ -6,22 +6,12 @@
 /*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 19:08:34 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/11/09 19:14:27 by pabrogi          ###   ########.fr       */
+/*   Updated: 2025/11/09 19:54:19 by pabrogi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-	
-	i = 0;
-	while(s[i])
-		i++;
-	return (i);	
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
