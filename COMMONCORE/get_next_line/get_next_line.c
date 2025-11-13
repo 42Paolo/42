@@ -6,16 +6,18 @@ char *get_next_line(int fd)
 		return (NULL);
 	int	n;
 	char *buff = (char *)malloc(sizeof(char) * BUFFER_SIZE);
+	char *str;
 	char *rest;
 	// while(((n = read(fd, buff, BUFFER_SIZE))) > 0)
 	// {
 		n = read(fd, buff, BUFFER_SIZE);
 		buff[n] = '\0';	
+		str = take_str(buff);
 		if((rest = take_rest(buff)) != NULL)
 		{
 			int len_rest = ft_strlen(rest);
-			
-
+			//ANDARE A SOVRASCRIVERE IL BUFFER CON IL RESTO E SCRIVERCI SOPRA ANCHE 
+			//IL RESTO DEL FILE FINO A QUANDO STRLEN DEL RESTO E +STRLEN FILE SONO MINORI DI BUFFERSIZE
 		}
 			
 	//}

@@ -24,6 +24,30 @@ int	ft_strlen(const char *s)
 	return (i);	
 }
 
+char	*take_str(char *buff)
+{
+	int		i = 0;
+	char	*str;
+	char	*ptr;
+
+	if (!buff)
+		return (NULL);
+	while (buff[i] && buff[i] != '\n')
+		i++;
+	if (buff[i] == '\n')
+		i++;
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
+		return (NULL);
+	ptr = str;
+	while (*buff && *buff != '\n')
+		*str++ = *buff++;
+	if (*buff == '\n')
+		*str++ = *buff++;
+	*str = '\0';
+
+	return (ptr);
+}
 
 char	*take_rest(char *str)
 {
