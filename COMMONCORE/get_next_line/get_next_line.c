@@ -1,42 +1,52 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pabrogi <pabrogi@student.42firenze.it>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 15:02:47 by pabrogi           #+#    #+#             */
-/*   Updated: 2025/11/10 16:34:31 by pabrogi          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
-
-
-#include <fcntl.h>
 #include <unistd.h>
-#include <stdio.h>
 
-void    read_file(int fd)
+char *get_next_line(int fd)
 {
-    static char buffer[128];
-    int         bytes_read;
+	if(fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	int	n;
+	char *buff = (char *)malloc(sizeof(char) * BUFFER_SIZE);
+		while((n = read(fd, buff, BUFFER_SIZE) > 0))
+		{
+			buff[n] = '\0';
+			
 
-    while ((bytes_read = read(fd, buffer, 127)) > 0)
-    {
-        buffer[bytes_read] = '\0'; 
-		printf("%s", buffer);
-    }
-    if (bytes_read == -1)
-        perror("read");
+		}
+	return (str);
 }
 
-int main(void)
+int	main(void)
 {
-    int fd = open("prova.txt", O_RDONLY);
-    if (fd == -1)
-        return 1;
-    read_file(fd);
-    close(fd);
-    return 0;
+	int		fd1;
+	int		fd2;
+	char	*line;
+
+	// Apri due file di esempio
+	fd1 = open("test1.txt", O_RDONLY);
+	fd2 = open("test2.txt", O_RDONLY);
+
+	if (fd1 < 0 || fd2 < 0)
+	{
+		perror("Errore apertura file");
+		return (1);
+	}
+
+	printf("---- LETTURA FILE 1 ----\n");
+	while ((line = get_next_line(fd1)) != NULL)
+	{
+		printf("LINEA1: %s", line);
+		free(line);
+	}
+
+	printf("\n---- LETTURA FILE 2 ----\n");
+	while ((line = get_next_line(fd2)) != NULL)
+	{
+		printf("LINEA2: %s", line);
+		free(line);
+	}
+
+	close(fd1);
+	close(fd2);
+	return (0);
 }
