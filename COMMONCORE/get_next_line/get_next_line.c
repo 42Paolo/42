@@ -1,5 +1,4 @@
 #include "get_next_line.h"
-#include <unistd.h>
 
 char *get_next_line(int fd)
 {
@@ -7,13 +6,20 @@ char *get_next_line(int fd)
 		return (NULL);
 	int	n;
 	char *buff = (char *)malloc(sizeof(char) * BUFFER_SIZE);
-		while((n = read(fd, buff, BUFFER_SIZE) > 0))
+	char *rest;
+	// while(((n = read(fd, buff, BUFFER_SIZE))) > 0)
+	// {
+		n = read(fd, buff, BUFFER_SIZE);
+		buff[n] = '\0';	
+		if((rest = take_rest(buff)) != NULL)
 		{
-			buff[n] = '\0';
+			int len_rest = ft_strlen(rest);
 			
 
 		}
-	return (str);
+			
+	//}
+	return (buff);
 }
 
 int	main(void)
@@ -37,6 +43,7 @@ int	main(void)
 	{
 		printf("LINEA1: %s", line);
 		free(line);
+		break;
 	}
 
 	printf("\n---- LETTURA FILE 2 ----\n");
@@ -44,6 +51,7 @@ int	main(void)
 	{
 		printf("LINEA2: %s", line);
 		free(line);
+		break;
 	}
 
 	close(fd1);

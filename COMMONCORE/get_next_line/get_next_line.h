@@ -8,10 +8,13 @@
 #include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 100
 # endif
 
 char	*get_next_line(int fd);
 char	*ft_strchr(const char *s, int c);
+char	*take_rest(char *str);
+int		ft_strlen(const char *s);
+
 
 #endif
