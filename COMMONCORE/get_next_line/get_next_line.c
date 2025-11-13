@@ -1,27 +1,35 @@
 #include "get_next_line.h"
+#include <string.h>
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	if(fd < 0 || BUFFER_SIZE <= 0)
+	static char	*rest;
+	char		*buff;
+	char		*str;
+	int			n;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	int	n;
-	char *buff = (char *)malloc(sizeof(char) * BUFFER_SIZE);
-	char *str;
-	char *rest;
-	// while(((n = read(fd, buff, BUFFER_SIZE))) > 0)
-	// {
-		n = read(fd, buff, BUFFER_SIZE);
-		buff[n] = '\0';	
-		str = take_str(buff);
-		if((rest = take_rest(buff)) != NULL)
-		{
-			int len_rest = ft_strlen(rest);
-			//ANDARE A SOVRASCRIVERE IL BUFFER CON IL RESTO E SCRIVERCI SOPRA ANCHE 
-			//IL RESTO DEL FILE FINO A QUANDO STRLEN DEL RESTO E +STRLEN FILE SONO MINORI DI BUFFERSIZE
-		}
-			
-	//}
-	return (buff);
+	buff = malloc(BUFFER_SIZE + 1);
+	if (!buff)
+		return (NULL);
+	if (rest)
+	{
+		ft_strlcpy(buff, rest, BUFFER_SIZE + 1);
+		free(rest);
+		rest = NULL;
+	}
+	else
+		buff[0] = '\0';
+	while (!ft_strchr(buff, '\n') && (n = read(fd, buff + ft_strlen(buff),
+			BUFFER_SIZE - ft_strlen(buff))) > 0)
+		buff[ft_strlen(buff) + n] = '\0';
+	if (buff[0] == '\0')
+		return (free(buff), NULL);
+	str = take_str(buff);       
+	rest = take_rest(buff);     
+	free(buff);
+	return (str);
 }
 
 int	main(void)

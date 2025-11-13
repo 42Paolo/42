@@ -15,7 +15,7 @@ char	*get_next_line(int fd);
 char	*ft_strchr(const char *s, int c);
 char	*take_rest(char *str);
 int		ft_strlen(const char *s);
-char *take_str(char *buff);
-
+char 	*take_str(char *buff);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 #endif

@@ -1,7 +1,6 @@
 #include "get_next_line.h"
-#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
@@ -22,6 +21,27 @@ int	ft_strlen(const char *s)
 	while(s[i])
 		i++;
 	return (i);	
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	space;
+
+	i = 0;
+	while (src[i])
+		i++;
+	if (dstsize == 0)
+		return (i);
+	space = dstsize - 1;
+	while (*src && space--)
+	{
+		*dst = *src;
+		dst++;
+		src++;
+	}
+	*dst = '\0';
+	return (i);
 }
 
 char	*take_str(char *buff)
@@ -45,7 +65,6 @@ char	*take_str(char *buff)
 	if (*buff == '\n')
 		*str++ = *buff++;
 	*str = '\0';
-
 	return (ptr);
 }
 
